@@ -1,0 +1,27 @@
+{
+  "name": "express-api-cache",
+  "version": "1.0.0",
+  "description": "API caching for Express/Node response using human friendly durations",
+  "main": "./src/cache.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniorpazformoso/express-api-cache.git"
+  },
+  "keywords": [
+    "API",
+    "cache",
+    "memory",
+    "express",
+    "response",
+    "reliability"
+  ],
+  "author": "Junior Paz Formoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juniorpazformoso/express-api-cache/issues"
+  },
+  "homepage": "https://github.com/juniorpazformoso/express-api-cache#readme"
+}
