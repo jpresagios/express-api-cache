@@ -26,5 +26,8 @@
   "homepage": "https://github.com/juniorpazformoso/express-api-cache#readme",
   "devDependencies": {
     "express": "^4.17.1"
+  },
+  "dependencies": {
+    "memory-cache": "^0.2.0"
   }
 }
