@@ -8,7 +8,7 @@ express-api-cache enable server-side cache for Express API to has more faster re
 ```js
 var express = require("express");
 var app = express();
-var cacheService = require("../src/cache");
+var cacheService = require("express-api-cache");
 var cache = cacheService.cache;
 
 app.get("/movies", cache("10 minutes"), (req, res) => {
