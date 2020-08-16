@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/juniorpazformoso/express-api-cache/issues"
   },
-  "homepage": "https://github.com/juniorpazformoso/express-api-cache#readme"
+  "homepage": "https://github.com/juniorpazformoso/express-api-cache#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
 }
