@@ -21,7 +21,8 @@
   "author": "Junior Paz Formoso",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/juniorpazformoso/express-api-cache/issues"
+    "url": "https://github.com/juniorpazformoso/express-api-cache/issues",
+    "email": "junior.presagios@gmail.com"
   },
   "homepage": "https://github.com/juniorpazformoso/express-api-cache#readme",
   "devDependencies": {
