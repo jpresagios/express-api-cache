@@ -14,8 +14,11 @@ var cache = cacheService.cache;
 app.get("/movies", cache("10 minutes"), (req, res) => {
   // Do some work to retrieve movies and request before 10 minutes will get movies from cache
   res.json([
-    { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001 },
-    { title: "The Lord of the Rings: The Two Towers", year: 2002 },
+    {
+      title: "The Lord of the Rings",
+      director: "Peter Jackson",
+    },
+    { title: "Memento", director: "Christopher Nolan" },
   ]);
 });
 
@@ -27,4 +30,4 @@ app.listen(3000, function () {
 ## API
 
 - `valid units` - ms, second, minute, hour, day, week, month.
-- `duration format` - [time][unit] as `5 minutes, 1 day`
+- `duration format` - [time][unit] as `5 minutes`
