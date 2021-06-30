@@ -1,24 +1,27 @@
 //Engines cache
-var MemoryCacheEngine = require("./memory-cache-engine");
-var timeConversion = require("./duration-service");
+const MemoryCacheEngine = require('./memory-cache-engine');
+const CacheObjet = require('./cache-object');
+const timeConversion = require('./duration-service');
 
 function CacheService() {
-  var cacheEngine = new MemoryCacheEngine();
+  const cacheEngine = new MemoryCacheEngine();
+  const cacheObjet = new CacheObjet();
 
   this.cache = function (strDuration) {
     return (req, res, next) => {
       const duration = timeConversion(strDuration);
 
       let key =
-        "__cache__" + (req.originalUrl || req.url) + JSON.stringify(req.body);
-      let cachedBody = cacheEngine.getFromCache(key);
-      if (cachedBody) {
-        res.send(cachedBody);
-        return;
+        '__cache__' + (req.originalUrl || req.url) + JSON.stringify(req.body);
+      let cachedObject = cacheEngine.getFromCache(key);
+      if (cachedObject) {
+        res.writeHead(cachedObject.status || 200, cachedObject.headers);
+        return res.end(cachedObject.content);
       } else {
         res.sendResponse = res.send;
         res.send = (body) => {
-          cacheEngine.storeInCache(key, body, duration);
+          const cacheObject = cacheObjet.createCache(res, body);
+          cacheEngine.storeInCache(key, cacheObject, duration);
           res.sendResponse(body);
         };
         next();
