@@ -1,6 +1,6 @@
 {
   "name": "express-api-cache",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "API caching for Express/Node response using human friendly durations",
   "main": "./src/cache.js",
   "scripts": {
