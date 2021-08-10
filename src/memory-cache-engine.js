@@ -23,5 +23,18 @@ MemoryCacheEngine.prototype.getFromCache = (key) => {
 MemoryCacheEngine.prototype.storeInCache = (key, data, duration) => {
   mcache.put(key, data, duration);
 };
+/**
+ * Used to delete all keys in a memcache
+ */
+MemoryCacheEngine.prototype.clearAllKeyInCache = () => {
+  mcache.clear();
+};
+/**
+ * Used to  delete specific key from memcache
+ * @param {*} key
+ */
+ MemoryCacheEngine.prototype.clearAllKeyInCache = (key) => {
+  mcache.del(key);
+};
 
 module.exports = MemoryCacheEngine;
